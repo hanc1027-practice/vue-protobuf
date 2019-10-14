@@ -1,47 +1,31 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-   
+    <button @click="_getStudentList">獲取學生列表</button>
   </div>
 </template>
 
 <script>
-import { getStudentList } from '@/api/student'
+import { getStudentList } from "@/api/student";
 export default {
-name: 'HelloWorld',
-created () {
-
-},
-methods: {
-_getStudentList () {
-const req = {
-limit = 20,
-offset = 0
-}
-getStudentList(req).then((res) => {
-console.log(res)
-}).catch((res) => {
-console.error(res)
-})
-}
-}
-}
+  name: "HelloWorld",
+  methods: {
+    _getStudentList() {
+      const req = {
+        limit: 20,
+        offset: 0
+      };
+      getStudentList(req)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(res => {
+          console.error(res);
+        });
+    }
+  },
+  created() {}
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style lang="scss">
 </style>
