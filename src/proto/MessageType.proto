@@ -1,0 +1,25 @@
+package framework;
+syntax = "proto3";
+// 公共請求體
+message PBMessageRequest {
+uint32 type = 1;// 訊息型別
+bytes messageData = 2;// 請求資料
+uint64 timestamp = 3;// 客戶端時間戳
+string version = 4;// api版本號
+
+string token = 14;// 使用者登入後伺服器返回的 token，用於登入校驗
+}
+
+// 訊息響應包
+message PBMessageResponse {
+uint32 type = 3;// 訊息型別
+bytes messageData = 4;// 返回資料
+
+uint32 resultCode = 6;// 返回的結果碼
+string resultInfo = 7;// 返回的結果訊息提示文字（用於錯誤提示）
+}
+// 所有的介面
+enum PBMessageType {
+// 學生相關
+getStudentList = 0;// 獲取所有學生的列表, PBStudentListReq => PBStudentListRsp
+}
