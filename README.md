@@ -20,7 +20,7 @@ $ npm install axios protobufjs --save-dev
 $ npx pbjs -t json src/proto/*.proto > src/proto/proto.json
 ```
 
-2) 不過，輸出成js模組才是最不用的：
+2) 不過，輸出成js模組才是最有用的：
 ```bash
 $ npx pbjs -t json-module -w commonjs -o src/proto/proto.js src/proto/*.proto
 ```

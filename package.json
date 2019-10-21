@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "proto:json": "pbjs -t json src/proto/*.proto > src/proto/proto.json",
     "proto": "pbjs -t json-module -w commonjs -o src/proto/proto.js src/proto/*.proto"
   },
   "dependencies": {
