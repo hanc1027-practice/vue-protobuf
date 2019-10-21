@@ -22,3 +22,8 @@ $ protoc --js_out=import_style=commonjs,binary:. awesome.proto
 $ npm run proto
 # 更新proto檔案後，執行此指令即可重新生成最新的js
 ```
+
+### run serve
+```bash
+$ npm run serve
+```
